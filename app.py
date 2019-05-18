@@ -50,19 +50,31 @@ def historial_html():
 def estudi_html():
     return render_template("estudio.html")
 
-@app.route("/usuario")
-def render2_html():
-    personainfo = {
-        "nombre": "Juan",
-        "edad":24
-        }
-    return personainfo["nombre"]
+@app.route("/formulario",methods=['GET','POST'])
+def for_preguntas():
+    if request.method=='POST':
+        nombre=request.form.get('nombre')
+        apellido=request.form.get('apellido')
+        fecha_de_nacimiento=request.form.get('fecha_de_nacimento')
+        sexo=request.form.get('sexo')
+        ciudad=request.form.get('ciudad')
+        grupo_sanguineo=request.form.get('grupo_sanguineo')
+        telefono=request.form.get('telefono')
+        cedula=request.form.get('cedula')
+        diccionario={}
+        diccionario["nombre"]= nombre
+        diccionario["apellido"]= apellido
+        diccionario["fecha_de_nacimiento"]=fecha_de_nacimiento
+        diccionario["sexo"]= sexo
+        diccionario["ciudad"]= ciudad
+        diccionario["grupo_sanguineo"]= grupo_sanguineo
+        diccionario["telefono"]= telefono
+        diccionario["vacunas"]=[]
+        database[cedula]=diccionario
+        return render_template("index.html",cedula=cedula)
+    return render_template("index.html",cedula="5591945")
+       
 
-@app.route("/edad")
-def edad():
-    personainfo = {
-        "nombre": "Juan",
-        "edad":24
-        }
-    personainfo["edad"]=personainfo["edad"]+1   
-    return str(personainfo["edad"])
+
+
+
