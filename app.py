@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 app = Flask(__name__)
 cedula=""
 database = {
@@ -35,7 +35,7 @@ def datos(cedula):
 def for_home():
     if request.method=='POST':
         cedula=request.form.get('cedula')
-        return render_template("index.html",cedula=cedula)
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
     return render_template("index.html",cedula="5591945")
 
 @app.route("/vacuna/<string:cedula>/")
@@ -71,10 +71,5 @@ def for_preguntas():
         diccionario["telefono"]= telefono
         diccionario["vacunas"]=[]
         database[cedula]=diccionario
-        return render_template("index.html",cedula=cedula)
-    return render_template("index.html",cedula="5591945")
-       
-
-
-
-
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
+    return render_template("registro.html")

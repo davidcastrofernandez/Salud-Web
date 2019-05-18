@@ -1,0 +1,80 @@
+<Html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+      
+        <title>Hisorial On line</title>
+      
+        <!-- Bootstrap core CSS -->
+        <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+      
+        <!-- Custom fonts for this template -->
+        <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Montserrat:400,700') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic') }}" rel="stylesheet" type="text/css">
+      
+        <!-- Plugin CSS -->
+        <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+      
+        <!-- Custom styles for this template -->
+        <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+      
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:5000/">Historial On line
+        </a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<form method="POST">
+        <h3 class="text-uppercase mb-12"
+        style="text-align: left"> 
+          <input type="text" name="nombre"placeholder=Nombre:>
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left">
+          <input type="text" name="apellido"placeholder=Apellido: >
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left">
+          <input type="text" name="fecha_de_nacimiento"placeholder="Fecha de nacimiento:" >
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left"> 
+          <input type="text" name="ciudad"placeholder=Ciudad:>
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left">
+          <input type="text" name="grupo_sanguineo"placeholder="Grupo Sanguineo:" >
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: cenleftter">
+          <input type="text" name="telefono"placeholder=Telefono/Celular: >
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left">
+          <input type="text" name="cedula"placeholder=Cedula: >
+          <br></h3>
+          <h3 class="text-uppercase mb-12"
+        style="text-align: left">
+          <input type="submit" style="margin-top: 30px" value="Registrar">  
+        
+          <br></h3>
+        </form>
+    </body>    
+</Html>        
