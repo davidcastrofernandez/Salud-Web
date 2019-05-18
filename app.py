@@ -1,6 +1,6 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 app = Flask(__name__)
-
+cedula=""
 database = {
     "5591945":{"nombre":"Mauricio","apellido": "Acosta","fecha_de_nacimiento":"23-12-2002","sexo":"m",
     "ciudad":"San_Antonio","grupo_sanguineo":"positivo","telefono":"98768785",
@@ -31,8 +31,11 @@ database = {
 def datos(cedula):
     return render_template("datos.html",paciente=database[cedula],cedula=cedula)
 
-@app.route("/")
-def adios_html():
+@app.route("/",methods=['GET','POST'])
+def for_home():
+    if request.method=='POST':
+        cedula=request.form.get('cedula')
+        return render_template("index.html",cedula=cedula)
     return render_template("index.html",cedula="5591945")
 
 @app.route("/vacuna/<string:cedula>/")
