@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 app = Flask(__name__)
 cedula=""
 database = {
@@ -35,7 +35,7 @@ def datos(cedula):
 def for_home():
     if request.method=='POST':
         cedula=request.form.get('cedula')
-        return render_template("index.html",cedula=cedula)
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
     return render_template("index.html",cedula="5591945")
 
 @app.route("/vacuna/<string:cedula>/")
@@ -66,3 +66,15 @@ def edad():
         }
     personainfo["edad"]=personainfo["edad"]+1   
     return str(personainfo["edad"])
+
+@app.route("/registro")
+def registro_html():
+    return render_template("registro.html")
+"""
+@app.route("/",methods=['GET','POST'])
+def for_registro():
+    if request.method=='POST':
+        Regiatro=request.form.get('cedula')
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
+    return render_template("index.html",cedula="5591945")
+    """
