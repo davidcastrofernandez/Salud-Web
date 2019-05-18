@@ -12,10 +12,21 @@ def hola_mundo():
 def render_html():
     return render_template("index.html")
 
-@app.route("/adios")
+@app.route("/datos2")
 def adios_html():
-    return render_template("index.html")
+    return render_template("datos2.html")
 
+@app.route("/vacuna")
+def vacuna_html():
+    return render_template("vacuna.html")
+
+@app.route("/historial")
+def historial_html():
+    return render_template("historial.html")
+
+@app.route("/estudio")
+def estudi_html():
+    return render_template("estudio.html")
 
 @app.route("/usuario")
 def render2_html():
