@@ -88,66 +88,19 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for vacuna in paciente.vacunas %}
                           <tr class="table-info">
                             <td>
-                              
+                              {{vacuna.fecha}}
                             </td>
                             <td>
-                              
+                                {{vacuna.vacuna_aplicada}}
                             </td>
                             <td>
-                              
+                                {{vacuna.proxima_vacuna}}
                             </td>
-                            
                           </tr>
-                          <tr class="table-warning">
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                           
-                          </tr>
-                          <tr class="table-danger">
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                            <td>
-                             
-                            </td>
-                            
-                          </tr>
-                          <tr class="table-success">
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                            
-                          </tr>
-                          <tr class="table-primary">
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                            <td>
-                              
-                            </td>
-                           
-                          </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
