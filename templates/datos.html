@@ -1,0 +1,121 @@
+<html>
+        <head>
+
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
+              
+                <title>Salud Web</title>
+              
+                <!-- Bootstrap core CSS -->
+                <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+              
+                <!-- Custom fonts for this template -->
+                <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Montserrat:400,700') }}" rel="stylesheet" type="text/css">
+                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic') }}" rel="stylesheet" type="text/css">
+              
+                <!-- Plugin CSS -->
+                <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+              
+                <!-- Custom styles for this template -->
+                <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+              
+</head>
+<body>
+      <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="hola">historial on line
+          </a>
+          <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="datos">Datos personales</a>
+              </li>
+              
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="historial">historial clinico</a>
+              </li>
+             
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#agendamientos">agendamiento de consultas</a>
+              </li>
+    
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#estudios">estudios clinicos</a>
+              </li>
+    
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vacuna">vacunacion</a>
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+<!-- datos personales Grid Section -->
+    section class="datos personales" id="datos_personales">
+    <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt="">
+      <h2 class="text-center text-uppercase text-secondary mb-0">datos personales</h2>
+      <hr class="star-dark mb-5">
+      
+      </div>
+      <div class="form-group"> <!-- Nombre -->    
+        <label class="col-sm-4 control-label">Nombre </label>
+        <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
+          <input type="text" name="codigo" class="form-control" placeholder="Nombre" required>
+          </div>                
+      </div>
+      <div class="form-group"> <!-- Apellido -->    
+        <label class="col-sm-4 control-label">Apellido </label>
+        <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
+          <input type="text" name="codigo" class="form-control" placeholder="Apellido" required>
+          </div>                
+      </div>
+      <div class="form-group"> <!-- Fecha de nacimiento -->   
+          <label class="col-sm-4 control-label">Fecha de nacimiento</label>
+        <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-date"></span></span>
+              <input type="text" name="nombres" class="form-control" placeholder="Fecha de nacimiento" required>
+          </div>                
+      </div>
+  
+      <div class="form-group"> <!-- Ciudad -->    
+          <label class="col-sm-4 control-label">Ciudad</label>
+          <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-city"></span></span>
+              <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Ciudad" required>
+          </div>                
+      </div>
+  
+      <div class="form-group"> <!-- Grupo Sanguineo -->  
+          <label class="col-sm-4 control-label">Grupo Sanguineo</label>
+          <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-blood"></span></span>
+              <input type="text" name="telefono" class="form-control" placeholder="Grupo Sanguineo" required>
+          </div>                
+      </div>
+  
+      <div class="form-group"> <!-- Telefono / Celular -->   
+          <label class="col-sm-4 control-label">Telefono / Celular</label>
+              <div class=" col-sm-6 input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
+              <input type="text" name="telefono" class="form-control" placeholder="Teléfono / Celular" required>
+          </div>  
+      </div>  
+    </div>
+    </div>
+    </section>
+</body>
+</html>
