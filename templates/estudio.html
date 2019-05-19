@@ -3,7 +3,7 @@
       <label class="col-sm-4 control-label titulos1">Nombre y Apellido </label>
       <div class=" col-sm-3 input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
-        <input type="text" name="codigo" class="form-control" placeholder="Nombre y apellido" required>
+        <input type="text" name="codigo" class="form-control" placeholder="Nombre y apellido" value={{paciente.nombre}}>
         </div>                
     </div>
 
@@ -11,7 +11,7 @@
         <label class="col-sm-4 control-label">Fecha de nacimiento</label>
       <div class=" col-sm-6 input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            <input type="text" name="nombres" class="form-control" placeholder="Fecha de nacimientos" required>
+            <input type="text" name="nombres" class="form-control" placeholder="Fecha de nacimientos" value={{paciente.fecha_de_nacimiento}}>
         </div>                
     </div>
 
@@ -19,15 +19,15 @@
         <label class="col-sm-4 control-label">Ciudad</label>
         <div class=" col-sm-6 input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Ciudad" required>
+            <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
         </div>                
     </div>
 
-    <div class="form-group"> <!-- Grupo Sanguineo -->  
+    <div class="form-group"> <!-- grupo_sanguineo -->  
         <label class="col-sm-4 control-label">Grupo Sanguineo</label>
         <div class=" col-sm-6 input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-            <input type="text" name="telefono" class="form-control" placeholder="Grupo Sanguinea" required>
+            <input type="text" name="telefono" class="form-control" placeholder="grupo_sanguineo" value={{paciente.grupo_sanguineo}}>
         </div>                
     </div>
 
@@ -35,7 +35,7 @@
         <label class="col-sm-4 control-label">Telefono / Celular</label>
             <div class=" col-sm-6 input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-            <input type="text" name="telefono" class="form-control" placeholder="Teléfono / Celular" required>
+            <input type="text" name="telefono" class="form-control" placeholder="Teléfono / Celular"  value={{paciente.telefono}}>
         </div>  
     </div>  
 </div>
