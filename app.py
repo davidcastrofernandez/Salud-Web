@@ -155,13 +155,13 @@ def for_home():
 def vacuna_html(cedula):
     return render_template("vacuna.html",paciente=persona1[cedula],cedula=cedula)
 
-@app.route("/historial")
-def historial_html():
-    return render_template("historial.html")
+@app.route("/historial/<string:cedula>/")
+def historial_html(cedula):
+    return render_template("historial.html",paciente=persona1[cedula],cedula=cedula)
 
-@app.route("/estudio")
-def estudi_html():
-    return render_template("estudio.html")
+@app.route("/estudio/<string:cedula>/")
+def estudio_html(cedula):
+    return render_template("estudio.html",paciente=persona1[cedula],cedula=cedula)
 
 @app.route("/formulario",methods=['GET','POST'])
 def formulario():
