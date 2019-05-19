@@ -19,7 +19,7 @@ persona1 ={
                 "vacunas":[
                     {"fecha":"18-06-2019","vacuna_aplicada":"antigripal","proxima_vacuna":"28-10-2020"},
                     {"fecha":"23-03-2018","vacuna_aplicada":"antirabico","proxima_vacuna":"18-08-2019"},
-                    {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima vacuna":"20-02-2019"}
+                    {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima_vacuna":"20-02-2019"}
                     ]
                 }, 
         
