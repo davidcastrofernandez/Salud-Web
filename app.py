@@ -1,6 +1,32 @@
 from flask import Flask,render_template,request,redirect
 app = Flask(__name__)
 cedula=""
+
+personas = [
+    {
+    "cedula":  5591945,
+    "nombre":"Mauricio",
+    "apellido": "Acosta",
+    "fecha_de_nacimiento":"23-12-2002",
+    "sexo":"m",
+    "ciudad":"San_Antonio",
+    "grupo_sanguineo":"positivo",
+    "telefono":"98768785",
+    "vacunas":[
+        {"fecha":"18-06-2019","vacuna_aplicada":"antigripal","proxima_vacuna":"28-10-2020"},
+        {"fecha":"23-03-2018","vacuna_aplicada":"antirabico","proxima_vacuna":"18-08-2019"},
+        {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima vacuna":"20-02-2019"}
+        ]
+    },
+    {
+    "cedula": 6970882,
+    "nombre": "laura",
+    "apellido": "Acosta",
+    "fecha_de_nacimiento":"23-12-2002",
+    "sexo":"m",
+    }
+]    
+
 database = {
     "5591945":{"nombre":"Mauricio","apellido": "Acosta","fecha_de_nacimiento":"23-12-2002","sexo":"m",
     "ciudad":"San_Antonio","grupo_sanguineo":"positivo","telefono":"98768785",
