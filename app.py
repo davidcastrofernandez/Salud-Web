@@ -20,7 +20,16 @@ persona1 ={
                     {"fecha":"18-06-2019","vacuna_aplicada":"antigripal","proxima_vacuna":"28-10-2020"},
                     {"fecha":"23-03-2018","vacuna_aplicada":"antirabico","proxima_vacuna":"18-08-2019"},
                     {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima_vacuna":"20-02-2019"}
-                    ]
+                    ],
+                "historial_medico":[
+                    {"fecha_inicio":"02-02-2019","diagnostico_medico":"infeccion_en_las_vias_orinarias",
+                    "estudios_realizados":"analisis_de_orina","receta":"antibioticos","fecha_culminada":"10-02-2019"}
+                ],
+                "estudios_medicos":[
+                    {"fecha_de_inicio":"11-03-2019","dagnostico_medico":"fiebre","estudio_realizados":"analisis_de_orina",
+                    "receta":"z-mol","proxima_consulta":"14-03-2019"}
+                ]
+
                 }, 
         
         "982145358":{
@@ -121,6 +130,9 @@ database = {
 ]  
 
 """
+
+
+#persona2{
 #print(database["5591945"]["nombre"])
 @app.route("/datos/<string:cedula>/")
 def datos(cedula):
