@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>Hisorial On line</title>
-
+  
   <!-- Bootstrap core CSS -->
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -37,31 +37,14 @@
         Menu
         <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos/{{cedula}}">Datos personales</a>
-          </li>
-          
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/historial">historial clinico</a>
-          </li>
-         
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#agendamientos">agendamiento de consultas</a>
-          </li>
-
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#estudios">estudios clinicos</a>
-          </li>
-
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/vacuna">vacunacion</a>
-          </li>
-
-        </ul>
-      </div>
+      
+      <form method="POST">
+        <h6 class="font-weight-light mb-0"
+        style="color:#20c997;" style="text-align:center">Cedula: 
+          <input type="text" name="cedula"> 
+          <input type="submit" style="margin-top: 30px" value="buscar"> 
+        </h6> 
+      </form>  
     </div>
   </nav>
 
@@ -72,22 +55,19 @@
       <h1 class="text-uppercase mb-0">salud web</h1>
       <hr class="star-light">
       <h2 class="font-weight-light mb-0">la salud mas practica,rapida y segura</h2>
+      <a style="color:#000" class="font-weight-light mb-0" href="http://127.0.0.1:5000/registro"title="Te garantizamos seguridad de tus datos" ><h2>Registrate</h2>
+      </a>   
     </div>
   </header>
   <br>
   <form method="POST">
-      <h3 class="text-uppercase mb-12"
-      style="text-align: center">Cedula: 
-        <input type="text" name="cedula">
-      </br>
-        <input type="submit" style="margin-top: 30px" value="buscar">  
-      <br></h3>
+      
   </form>
   <div><a href="/formulario">Si no te registraste, registrarse </a>  </div>
   <!-- datos personales Grid Section -->
   <section class="datos personales" id="datos_personales">
       <div class="container">
-          <a title="Datos personales" href="http://127.0.0.1:5000/datos/{{cedula}}"><img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt=""></a>
+         <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt=""></a>
         <h2 class="text-center text-uppercase text-secondary mb-0">datos personales</h2>
         <hr class="star-dark mb-5">
         
@@ -98,125 +78,13 @@
   <!-- historial clinico Section -->
   <section class="bg-primary text-blue mb-0" id="historial_clinico">
     <div class="container">
-        <a title="Historial Clinico" href="http://127.0.0.1:5000/historial"><img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt=""></a>
+        <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt=""></a>
       <h2 class="text-center text-uppercase text-white">historial clinico</h2>
       <hr class="star-light mb-5">
       <div class="row">
         <div class="col-lg-12 ml-auto">
           <p class="lead">
           
-              <div class="table-responsive pt-3">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>
-                          Fecha
-                        </th>
-                        <th>
-                          Diagnostico medico
-                        </th>
-                        <th>
-                          Estudios hechos
-                        </th>
-                        <th>
-                          Receta
-                        </th>
-                        <th>
-                          Proximo control
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="table-info">
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr class="table-warning">
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr class="table-danger">
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                         
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr class="table-success">
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr class="table-primary">
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-          
-        
         </p>
         </div>
         <div class="col-lg-4 mr-auto">
@@ -241,7 +109,7 @@
 <section class="estudios clinicos" id="estudios">
     <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/x.jpg') }}" alt="">
-      <h2 class="text-center text-uppercase text-secondary mb-0">estudios clinicos</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">studios clinicos</h2>
       <hr class="star-dark mb-5">
       <div class="row">
 
@@ -251,94 +119,12 @@
   <!-- vacunacion Grid Section -->
   <section class="bg-primary text-white mb-0" id="vacunacion">
       <div class="container">
-          <a title="Vacunacion" href="http://127.0.0.1:5000/vacuna"><img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen11.jpg') }}" alt=""></a>
+          <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen11.jpg') }}" alt=""></a>
         <h2 class="text-center text-uppercase text-white">Vacunacion</h2>
         <hr class="star-light mb-5">
         <div class="row">
           <div class="col-lg-8 ml-auto">
             <p class="lead">
-            
-                <div class="table-responsive pt-3">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>
-                            Fecha
-                          </th>
-                          <th>
-                            Vacuna aplicada
-                          </th>
-                          <th>
-                            Proxima vacuna
-                          </th>
-                         
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="table-info">
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          
-                        </tr>
-                        <tr class="table-warning">
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                         
-                        </tr>
-                        <tr class="table-danger">
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                           
-                          </td>
-                          
-                        </tr>
-                        <tr class="table-success">
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          
-                        </tr>
-                        <tr class="table-primary">
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                         
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-            
           
           </p>
           </div>
@@ -356,8 +142,8 @@
       <div class="row">
         <div class="col-md-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">2215 John Daniel Drive
-            <br>Clark, MO 65243</p>
+          <p class="lead mb-0">Casa de Nomadas, Ycua Sati 
+            <br>Calle Gumersindo Sosa 1461, Asuncion </p>
         </div>
         <div class="col-md-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Around the Web</h4>
@@ -390,9 +176,10 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <h4 class="text-uppercase mb-4">About Freelancer</h4>
-          <p class="lead mb-0">Freelance is a free to use, open source Bootstrap theme created by
-            <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+          <a href="https://api.whatsapp.com/send?phone=595981337645" target="_blank" data-content="https://api.whatsapp.com/send?phone=56956814560" data-type="external" id="comp-jikk6zfu0imagelink" class="lb1imageItemlink"><div data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-jikk6zha1&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;Envíanos un WhatsApp&quot;,&quot;uri&quot;:&quot;a1e890_47221b20cc0448c59ac9687616a78822~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:256,&quot;height&quot;:256,&quot;alt&quot;:&quot;Envíanos un WhatsApp&quot;,&quot;link&quot;:{&quot;type&quot;:&quot;ExternalLink&quot;,&quot;id&quot;:&quot;dataItem-jikk6zha2&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;1.0&quot;,&quot;isHidden&quot;:false},&quot;url&quot;:&quot;https://api.whatsapp.com/send?phone=595981337645&quot;,&quot;target&quot;:&quot;_blank&quot;}},&quot;displayMode&quot;:&quot;fill&quot;}" style="position: absolute; width: 36px; height: 36px;" data-has-bg-scroll-effect="" data-style="position:absolute" class="lb1imageItemimage" id="comp-jikk6zfu0imageimage"><img id="comp-jikk6zfu0imageimageimage" alt="Envíanos un WhatsApp" data-type="image" itemprop="image" style="width: 36px; height: 36px; object-fit: cover;" src="https://static.wixstatic.com/media/a1e890_47221b20cc0448c59ac9687616a78822~mv2.png/v1/fill/w_36,h_36,al_c,q_80,usm_0.66_1.00_0.01/a1e890_47221b20cc0448c59ac9687616a78822~mv2.webp"></div></a>
+          <span style="font-weight:bold;"><span class="color_11">
+            <span style="text-decoration:underline;">CONTÁCTANOS POR WHATSAPP</span></span>
+            <br> +(595)981337645
         </div>
       </div>
     </div>
@@ -400,8 +187,8 @@
 
   <div class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright &copy; Your Website 2019</small>
-    </div>
+      <small>Copyright &copy; Your Website 2019
+        </small></div>
   </div>
 
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
@@ -411,140 +198,7 @@
     </a>
   </div>
 
-  <!-- Portfolio Modals -->
-
-  <!-- Portfolio Modal 1 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="{{ url_for('static', filename='img/portfolio/cabin.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 2 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="{{ url_for('static', filename='img/portfolio/cake.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 3 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="{{ url_for('static', filename='img/portfolio/circus.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 4 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="{{ url_for('static', filename='img/portfolio/game.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 5 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="{{ url_for('static', filename='img/portfolio/safe.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 6 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-    <div class="portfolio-modal-dialog bg-white">
-      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-        <i class="fa fa-3x fa-times"></i>
-      </a>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-            <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/submarine.png') }}" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Close Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

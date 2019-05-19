@@ -58,6 +58,24 @@ persona = [
         ]
     },
     {
+    "cedula": 6970882,
+    "nombre": "laura",
+    "apellido": "Acosta",
+    "fecha_de_nacimiento":"23-12-2002",
+    "sexo":"m",
+    }
+]    
+
+database = {
+    "5591945":{"nombre":"Mauricio","apellido": "Acosta","fecha_de_nacimiento":"23-12-2002","sexo":"m",
+    "ciudad":"San_Antonio","grupo_sanguineo":"positivo","telefono":"98768785",
+    "vacunas":[
+        {"fecha":"18-06-2019","vacuna_aplicada":"antigripal","proxima_vacuna":"28-10-2020"},
+        {"fecha":"23-03-2018","vacuna_aplicada":"antirabico","proxima_vacuna":"18-08-2019"},
+        {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima vacuna":"20-02-2019"}
+        ]
+    },
+    {
     "cedula":982145358,
     "nombre":"paula",
     "apellido": "santacruz",
@@ -157,6 +175,17 @@ def for_preguntas():
     return render_template("registro.html")
 
 
+@app.route("/registro")
+def registro_html():
+    return render_template("registro.html")
+"""
+@app.route("/",methods=['GET','POST'])
+def for_registro():
+    if request.method=='POST':
+        Regiatro=request.form.get('cedula')
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
+    return render_template("index.html",cedula="5591945")
+    """
 if __name__=='__main__':
     ip='192.168.1.130'
     app.run(host=ip)
