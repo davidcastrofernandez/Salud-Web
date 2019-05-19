@@ -23,10 +23,10 @@ persona1 ={
                     ],
                 "historial_medico":[
                     {"fecha_inicio":"02-02-2019","diagnostico_medico":"infeccion_en_las_vias_orinarias",
-                    "estudios_realizados":"analisis_de_orina","receta":"antibioticos","fecha_culminada":"10-02-2019"}
+                    "estudios_realizados":"analisis_de_orina","receta":"antibioticos","fecha_culminacion":"10-02-2019"}
                 ],
                 "estudios_medicos":[
-                    {"fecha_de_inicio":"11-03-2019","dagnostico_medico":"fiebre","estudio_realizados":"analisis_de_orina",
+                    {"fecha_de_inicio":"11-03-2019","diagnostico_medico":"fiebre","estudio_realizados":"analisis_de_orina",
                     "receta":"z-mol","proxima_consulta":"14-03-2019"}
                 ]
 
@@ -157,10 +157,12 @@ def vacuna_html(cedula):
 
 @app.route("/historial/<string:cedula>/")
 def historial_html(cedula):
+    print(persona1[cedula])
     return render_template("historial.html",paciente=persona1[cedula],cedula=cedula)
 
 @app.route("/estudio/<string:cedula>/")
 def estudio_html(cedula):
+    print(persona1[cedula])
     return render_template("estudio.html",paciente=persona1[cedula],cedula=cedula)
 
 @app.route("/formulario",methods=['GET','POST'])

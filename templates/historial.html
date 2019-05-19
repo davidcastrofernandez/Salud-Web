@@ -93,23 +93,25 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for historial in paciente.historial_medico%}
                           <tr class="table-info">
                             <td>
-                              
+                              {{historial.fecha_inicio}}
                             </td>
                             <td>
-                              
+                                {{historial.diagnostico_medico}}
                             </td>
                             <td>
-                              
+                                {{historial.estudios_realizados}}
                             </td>
                             <td>
-                              
+                                {{historial.receta}}
                             </td>
                             <td>
-                              
+                              {{historial.fecha_culminacion}}
                             </td>
                           </tr>
+                          {% endfor %}
                           <tr class="table-warning">
                             <td>
                               
