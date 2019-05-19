@@ -49,7 +49,7 @@
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#estudios">estudios clinicos</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/estudio">estudios clinicos</a>
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
@@ -64,7 +64,7 @@
 <!-- datos personales Grid Section -->
     section class="datos personales" id="datos_personales">
     <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt="">
+        <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:190px" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt="">
       <h2 class="text-center text-uppercase text-secondary mb-0">datos personales</h2>
       <hr class="star-dark mb-5">
       
@@ -73,21 +73,21 @@
         <label class="col-sm-4 control-label">Nombre </label>
         <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
-          <input type="text" name="codigo" class="form-control" placeholder="Nombre" value={{paciente.nombre}}>
+          <input type="text" disabled name="codigo" class="form-control" placeholder="Nombre" value={{paciente.nombre}}>
           </div>                
       </div>
       <div class="form-group"> <!-- Apellido -->    
         <label class="col-sm-4 control-label">Apellido </label>
         <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
-          <input type="text" name="codigo" class="form-control" placeholder="Apellido" value={{paciente.apellido}}>
+          <input type="text" disabled name="codigo" class="form-control" placeholder="Apellido" value={{paciente.apellido}}>
           </div>                
       </div>
       <div class="form-group"> <!-- Fecha_de_nacimiento -->   
           <label class="col-sm-4 control-label">Fecha de nacimiento</label>
         <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-date"></span></span>
-              <input type="text" name="nombres" class="form-control" placeholder="Fecha_de_nacimiento" value={{paciente.fecha_de_nacimiento}}>
+              <input type="text" disabled name="nombres" class="form-control" placeholder="Fecha_de_nacimiento" value={{paciente.fecha_de_nacimiento}}>
           </div>                
       </div>
   
@@ -95,7 +95,7 @@
           <label class="col-sm-4 control-label">Ciudad</label>
           <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-city"></span></span>
-              <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
+              <input type="text" disabled name="lugar_nacimiento" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
           </div>                
       </div>
   
@@ -103,7 +103,7 @@
           <label class="col-sm-4 control-label">Grupo Sanguineo</label>
           <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-blood"></span></span>
-              <input type="text" name="telefono" class="form-control" placeholder="Grupo sanguineo" value={{paciente.grupo_sanguineo}}>
+              <input type="text" disabled name="telefono" class="form-control" placeholder="Grupo sanguineo" value={{paciente.grupo_sanguineo}}>
           </div>                
       </div>
   
@@ -111,7 +111,7 @@
           <label class="col-sm-4 control-label">Telefono / Celular</label>
               <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-              <input type="text" name="telefono" class="form-control" placeholder="Teléfono / Celular" value={{paciente.telefono}}>
+              <input type="text" disabled name="telefono" class="form-control" placeholder="Teléfono / Celular" value={{paciente.telefono}}>
           </div>  
       </div>  
     </div>

@@ -1,43 +1,196 @@
-<form id="imageform" class="form-horizontal center-block" action="" method="post" enctype="multipart/form-data">
-    <div class="form-group"> <!-- Nombre y Apellido -->    
-      <label class="col-sm-4 control-label titulos1">Nombre y Apellido </label>
-      <div class=" col-sm-3 input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
-        <input type="text" name="codigo" class="form-control" placeholder="Nombre y apellido" value={{paciente.nombre}}>
-        </div>                
-    </div>
+<html lang="en">
+        <head>
 
-    <div class="form-group"> <!-- Fecha de nacimientoo -->   
-        <label class="col-sm-4 control-label">Fecha de nacimiento</label>
-      <div class=" col-sm-6 input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            <input type="text" name="nombres" class="form-control" placeholder="Fecha de nacimientos" value={{paciente.fecha_de_nacimiento}}>
-        </div>                
-    </div>
-
-    <div class="form-group"> <!-- Ciudad -->    
-        <label class="col-sm-4 control-label">Ciudad</label>
-        <div class=" col-sm-6 input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
-        </div>                
-    </div>
-
-    <div class="form-group"> <!-- grupo_sanguineo -->  
-        <label class="col-sm-4 control-label">Grupo Sanguineo</label>
-        <div class=" col-sm-6 input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-            <input type="text" name="telefono" class="form-control" placeholder="grupo_sanguineo" value={{paciente.grupo_sanguineo}}>
-        </div>                
-    </div>
-
-    <div class="form-group"> <!-- Telefono / Celular -->   
-        <label class="col-sm-4 control-label">Telefono / Celular</label>
-            <div class=" col-sm-6 input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-            <input type="text" name="telefono" class="form-control" placeholder="Teléfono / Celular"  value={{paciente.telefono}}>
-        </div>  
-    </div>  
-</div>
-
-</form>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
+              
+                <title>Salud Web</title>
+              
+                <!-- Bootstrap core CSS -->
+                <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+              
+                <!-- Custom fonts for this template -->
+                <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Montserrat:400,700') }}" rel="stylesheet" type="text/css">
+                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic') }}" rel="stylesheet" type="text/css">
+              
+                <!-- Plugin CSS -->
+                <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+              
+                <!-- Custom styles for this template -->
+                <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+              
+</head>
+<body>
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:5000/">historial On line
+          </a>
+          <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos/{{cedula}}">Datos personales</a>
+              </li>
+              
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/historial">historial clinico</a>
+              </li>
+             
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#agendamientos">agendamiento de consultas</a>
+              </li>
+    
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/estudio">estudios clinicos</a>
+              </li>
+    
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/vacuna">vacunacion</a>
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+    </nav>
+   
+  <!-- historial clinico Section -->
+    <section class="bg-primary text-blue mb-0" id="historial_clinico">
+        <div class="container">
+            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/x.jpg') }}" alt="">
+          <h2 class="text-center text-uppercase text-white">Estudios clinicos</h2>
+          <hr class="star-light mb-5">
+          <div class="row">
+            <div class="col-lg-12 ml-auto">
+              <p class="lead">
+              
+                  <div class="table-responsive pt-3">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>
+                              Fecha Inicio
+                            </th>
+                            <th>
+                              Diagnostico Medico
+                            </th>
+                            <th>
+                              Estudios Realizados
+                            </th>
+                            <th>
+                              Receta
+                            </th>
+                            <th>
+                              Proximo Consulta
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-info">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-warning">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-danger">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                             
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-success">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-primary">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+            </p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+              <p class="lead"></p>
+            </div>
+          </div>
+          
+        </div>
+    </section>
+</body>
+</html>

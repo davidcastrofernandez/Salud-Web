@@ -37,7 +37,7 @@
             <ul class="navbar-nav ml-auto">
               
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos">Datos personales</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos/{{cedula}}">Datos personales</a>
               </li>
               
               <li class="nav-item mx-0 mx-lg-1">
@@ -49,7 +49,7 @@
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#estudios">estudios clinicos</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/estudio">estudios clinicos</a>
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
@@ -64,7 +64,7 @@
   <!-- historial clinico Section -->
     <section class="bg-primary text-blue mb-0" id="historial_clinico">
         <div class="container">
-            <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt="">
+            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt="">
           <h2 class="text-center text-uppercase text-white">historial clinico</h2>
           <hr class="star-light mb-5">
           <div class="row">
@@ -76,19 +76,19 @@
                         <thead>
                           <tr>
                             <th>
-                              Fecha
+                              Fecha Inicio
                             </th>
                             <th>
-                              diagnostico medico
+                              Diagnostico medico
                             </th>
                             <th>
-                              estudios hechos
+                              Estudios Realizados
                             </th>
                             <th>
-                              receta
+                              Receta
                             </th>
                             <th>
-                              proximo control
+                              Fecha Culminacion
                             </th>
                           </tr>
                         </thead>
