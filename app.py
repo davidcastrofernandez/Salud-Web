@@ -131,7 +131,12 @@ def for_home():
     local="http://127.0.0.1:5000/datos/"
     if request.method=='POST':
         cedula=request.form.get('cedula')
-        return redirect("http://127.0.0.1:5000/datos/"+cedula)
+        #debemos de comparar si ya hay la cedula, si no hay aun redireccionar al /registro
+        if cedula in persona1:  #verifica si za esta gaurdado en el diccionario
+            print("si esta la cedula")
+            return redirect("http://127.0.0.1:5000/datos/"+cedula)
+        else:
+            return redirect("http://127.0.0.1:5000/registro")
     return render_template("index.html",cedula="5591945")
 
 @app.route("/vacuna/<string:cedula>/")
@@ -147,7 +152,7 @@ def estudi_html():
     return render_template("estudio.html")
 
 @app.route("/formulario",methods=['GET','POST'])
-def for_preguntas():
+def formulario():
     if request.method=='POST':
         nombre=request.form.get('nombre')
         apellido=request.form.get('apellido')
