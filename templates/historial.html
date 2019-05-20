@@ -27,7 +27,7 @@
       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:5000/">historial On line
+          <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:5000/">Regresar
           </a>
           <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -37,23 +37,23 @@
             <ul class="navbar-nav ml-auto">
               
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos">Datos personales</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/datos/{{cedula}}">Datos personales</a>
               </li>
               
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/historial">historial clinico</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/historial/{{cedula}}">historial clinico</a>
               </li>
              
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#agendamientos">agendamiento de consultas</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/otros/{{cedula}}">Odontologia y Oftetricia</a>
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#estudios">estudios clinicos</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/estudio/{{cedula}}">estudios clinicos</a>
               </li>
     
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/vacuna">vacunacion</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:5000/vacuna/{{cedula}}">vacunacion</a>
               </li>
     
             </ul>
@@ -64,7 +64,7 @@
   <!-- historial clinico Section -->
     <section class="bg-primary text-blue mb-0" id="historial_clinico">
         <div class="container">
-            <img class="img-fluid mb-5 d-block mx-auto" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt="">
+            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt="">
           <h2 class="text-center text-uppercase text-white">historial clinico</h2>
           <hr class="star-light mb-5">
           <div class="row">
@@ -76,40 +76,42 @@
                         <thead>
                           <tr>
                             <th>
-                              Fecha
+                              Fecha Inicio
                             </th>
                             <th>
-                              diagnostico medico
+                              Diagnostico medico
                             </th>
                             <th>
-                              estudios hechos
+                              Estudios Realizados
                             </th>
                             <th>
-                              receta
+                              Receta
                             </th>
                             <th>
-                              proximo control
+                              Fecha Culminacion
                             </th>
                           </tr>
                         </thead>
                         <tbody>
+                          {% for historial in paciente.historial_medico%}
                           <tr class="table-info">
                             <td>
-                              
+                              {{historial.fecha_inicio}}
                             </td>
                             <td>
-                              
+                                {{historial.diagnostico_medico}}
                             </td>
                             <td>
-                              
+                                {{historial.estudios_realizados}}
                             </td>
                             <td>
-                              
+                                {{historial.receta}}
                             </td>
                             <td>
-                              
+                              {{historial.fecha_culminacion}}
                             </td>
                           </tr>
+                          {% endfor %}
                           <tr class="table-warning">
                             <td>
                               

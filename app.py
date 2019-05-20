@@ -20,7 +20,16 @@ persona1 ={
                     {"fecha":"18-06-2019","vacuna_aplicada":"antigripal","proxima_vacuna":"28-10-2020"},
                     {"fecha":"23-03-2018","vacuna_aplicada":"antirabico","proxima_vacuna":"18-08-2019"},
                     {"fecha":"13-07-2019","vacuna_aplicada":"antitetanico","proxima_vacuna":"20-02-2019"}
-                    ]
+                    ],
+                "historial_medico":[
+                    {"fecha_inicio":"02-02-2019","diagnostico_medico":"infeccion_en_las_vias_orinarias",
+                    "estudios_realizados":"analisis_de_orina","receta":"antibioticos","fecha_culminacion":"10-02-2019"}
+                ],
+                "estudios_medicos":[
+                    {"fecha_de_inicio":"11-03-2019","diagnostico_medico":"fiebre","estudio_realizados":"analisis_de_orina",
+                    "receta":"z-mol","proxima_consulta":"14-03-2019"}
+                ]
+
                 }, 
         
         "982145358":{
@@ -121,6 +130,9 @@ database = {
 ]  
 
 """
+
+
+#persona2{
 #print(database["5591945"]["nombre"])
 @app.route("/datos/<string:cedula>/")
 def datos(cedula):
@@ -143,13 +155,15 @@ def for_home():
 def vacuna_html(cedula):
     return render_template("vacuna.html",paciente=persona1[cedula],cedula=cedula)
 
-@app.route("/historial")
-def historial_html():
-    return render_template("historial.html")
+@app.route("/historial/<string:cedula>/")
+def historial_html(cedula):
+    print(persona1[cedula])
+    return render_template("historial.html",paciente=persona1[cedula],cedula=cedula)
 
-@app.route("/estudio")
-def estudi_html():
-    return render_template("estudio.html")
+@app.route("/estudio/<string:cedula>/")
+def estudio_html(cedula):
+    print(persona1[cedula])
+    return render_template("estudio.html",paciente=persona1[cedula],cedula=cedula)
 
 @app.route("/formulario",methods=['GET','POST'])
 def formulario():
@@ -180,9 +194,11 @@ def formulario():
     return render_template("registro.html")
 
 
+
 @app.route("/registro")
 def registro_html():
     return render_template("registro.html")
+
 """
 @app.route("/",methods=['GET','POST'])
 def for_registro():
@@ -194,3 +210,9 @@ def for_registro():
 if __name__=='__main__':
     ip='192.168.1.130'
     app.run(host=ip)
+
+@app.route("/otros/<string:cedula>/")
+def otros_html(cedula):
+    print(persona1[cedula])
+    return render_template("otros.html",paciente=persona1[cedula],cedula=cedula)
+
