@@ -194,9 +194,11 @@ def formulario():
     return render_template("registro.html")
 
 
+
 @app.route("/registro")
 def registro_html():
     return render_template("registro.html")
+
 """
 @app.route("/",methods=['GET','POST'])
 def for_registro():
@@ -208,12 +210,9 @@ def for_registro():
 if __name__=='__main__':
     ip='192.168.1.130'
     app.run(host=ip)
-'''
+
 @app.route("/otros/<string:cedula>/")
 def otros_html(cedula):
     print(persona1[cedula])
     return render_template("otros.html",paciente=persona1[cedula],cedula=cedula)
-'''
-@app.route("/otros")
-def otros_html():
-    return render_template("otros.html")
+
