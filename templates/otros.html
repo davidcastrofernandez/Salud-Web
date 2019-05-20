@@ -61,11 +61,11 @@
         </div>
     </nav>
    
-  <!-- historial clinico Section -->
-    <section class="bg-primary text-blue mb-0" id="historial_clinico">
+  <!-- Oftalmologia clinico Section -->
+    <section class="Oftalmologia" id="oftalmologia">
         <div class="container">
-            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/imagen4.jpg') }}" alt="">
-          <h2 class="text-center text-uppercase text-white">historial clinico</h2>
+            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/x.jpg') }}" alt="">
+          <h2 class="text-center text-uppercase text-white">Oftalmologia</h2>
           <hr class="star-light mb-5">
           <div class="row">
             <div class="col-lg-12 ml-auto">
@@ -79,36 +79,169 @@
                               Fecha Inicio
                             </th>
                             <th>
-                              Diagnostico medico
+                              Diagnostico Oftalmologico
                             </th>
                             <th>
                               Estudios Realizados
                             </th>
                             <th>
-                              Receta
+                              Tratamiento
                             </th>
                             <th>
-                              Fecha Culminacion
+                              Fecha de la Proxima Consulta
                             </th>
                           </tr>
                         </thead>
                         <tbody>
-                          {% for historial in paciente.historial_medico%}
+                            {% for estudio in paciente.estudios_medicos%}
                           <tr class="table-info">
                             <td>
-                              {{historial.fecha_inicio}}
+                              {{estudio.fecha_de_inicio}}
                             </td>
                             <td>
-                                {{historial.diagnostico_medico}}
+                              {{estudio.diagnostico_medico}}
                             </td>
                             <td>
-                                {{historial.estudios_realizados}}
+                              {{estudio.estudio_realizados}}
                             </td>
                             <td>
-                                {{historial.receta}}
+                              {{estudio.receta}}
                             </td>
                             <td>
-                              {{historial.fecha_culminacion}}
+                              {{estudio.proxima_consulta}}
+                            </td>
+                          </tr>
+                          {% endfor %}
+                          <tr class="table-warning">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-danger">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                             
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-success">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr class="table-primary">
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+            </p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+              <p class="lead"></p>
+            </div>
+          </div>
+          
+        </div>
+    </section>
+    <!-- Odontologia Section -->
+    <section class="bg-primary text-blue mb-0" id="Odontologia">
+        <div class="container">
+            <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:130px" src="{{ url_for('static', filename='img/x.jpg') }}" alt="">
+          <h2 class="text-center text-uppercase text-white">Odontologia</h2>
+          <hr class="star-light mb-5">
+          <div class="row">
+            <div class="col-lg-12 ml-auto">
+              <p class="lead">
+              
+                  <div class="table-responsive pt-3">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>
+                              Fecha Inicio
+                            </th>
+                            <th>
+                              Diagnostico Odontologia
+                            </th>
+                            <th>
+                              Estudios Realizados
+                            </th>
+                            <th>
+                              Tratamiento
+                            </th>
+                            <th>
+                              Fecha proxima consulta
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for estudio in paciente.estudios_medicos%}
+                          <tr class="table-info">
+                            <td>
+                              {{estudio.fecha_de_inicio}}
+                            </td>
+                            <td>
+                              {{estudio.diagnostico_medico}}
+                            </td>
+                            <td>
+                              {{estudio.estudio_realizados}}
+                            </td>
+                            <td>
+                              {{estudio.receta}}
+                            </td>
+                            <td>
+                              {{estudio.proxima_consulta}}
                             </td>
                           </tr>
                           {% endfor %}
