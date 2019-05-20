@@ -170,7 +170,7 @@ def formulario():
     if request.method=='POST':
         nombre=request.form.get('nombre')
         apellido=request.form.get('apellido')
-        fecha_de_nacimiento=request.form.get('fecha_de_nacimento')
+        fecha_de_nacimiento=request.form.get('fecha_de_nacimiento')
         sexo=request.form.get('sexo')
         ciudad=request.form.get('ciudad')
         grupo_sanguineo=request.form.get('grupo_sanguineo')
@@ -189,6 +189,11 @@ def formulario():
        
         redireccionar="http://"+ip +"/datos/"
         local="http://127.0.0.1:5000/datos/"
+        print(redireccionar)
+        return redirect(local+cedula)
+    else:
+        redireccionar="http://"+ip +"/registro/"
+        local="http://127.0.0.1:5000/registro/"    
         print(redireccionar)
         return redirect(local+cedula)
     return render_template("registro.html")
