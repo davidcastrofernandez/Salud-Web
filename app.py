@@ -6,11 +6,13 @@ cedula=""
 ip='192.168.1.130'
 
 
+# persona1[cedula][nombre] ="jorge"
+# persona1[cedula][nombre] = valor_del_form
 
 persona1 ={
         "5591945": {
                 "nombre":"Mauricio",
-                "apellido": "Acosta",
+                "apellido":"Acosta",
                 "fecha_de_nacimiento":"23-12-2002",
                 "sexo":"m",
                 "ciudad":"San_Antonio",
@@ -130,13 +132,38 @@ database = {
 ]  
 
 """
-
+@app.route("/modificador/<string:cedula>/", methods=['GET','POST'])
+def modificador(cedula):
+    if request.method=='POST':
+        tel = request.values.get("telefono1") #obtenemos el valor del campo telefono del formulario web
+        persona1[cedula]["telefono"] = tel #modificamos el diccionario
+        gru = request.values.get("grupo1")
+        persona1[cedula]["grupo_sanguineo"] = gru
+        lug = request.values.get("lugar1")
+        persona1[cedula]["ciudad"] = lug
+        fec = request.values.get("fecha1")
+        persona1[cedula]["fecha_de_nacimiento"] = fec
+        ape = request.values.get("apellido4")
+        persona1[cedula]["apellido"] = ape
+        nom = request.values.get("nombre4")
+        persona1[cedula]["nombre"] = nom
+        return redirect("http://127.0.0.1:5000/datos/"+cedula)
+        
+    else:
+        return render_template("modificador.html",paciente=persona1[cedula],cedula=cedula)
 
 #persona2{
 #print(database["5591945"]["nombre"])
 @app.route("/datos/<string:cedula>/")
 def datos(cedula):
     return render_template("datos.html",paciente=persona1[cedula],cedula=cedula)
+
+@app.route("/datos/")
+def datos1():
+        redireccionar="http://"+ip +"/registro"
+        local="http://127.0.0.1:5000/registro"    
+        print(redireccionar)
+        return redirect(local)
 
 @app.route("/",methods=['GET','POST'])
 def for_home():

@@ -13,8 +13,8 @@
               
                 <!-- Custom fonts for this template -->
                 <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Montserrat:400,700') }}" rel="stylesheet" type="text/css">
-                <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic') }}" rel="stylesheet" type="text/css">
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700')" rel="stylesheet" type="text/css">
+                <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')" rel="stylesheet" type="text/css">
               
                 <!-- Plugin CSS -->
                 <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
@@ -65,29 +65,30 @@
     section class="datos personales" id="datos_personales">
     <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" style="margin-top:190px" src="{{ url_for('static', filename='img/imagen7.jpg') }}" alt="">
-      <h2 class="text-center text-uppercase text-secondary mb-0">datos personales</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Configurar Datos Personales </h2>
       <hr class="star-dark mb-5">
       
       </div>
+      <form action="/modificador/{{cedula}}" method="POST">
       <div class="form-group"> <!-- Nombre -->    
         <label class="col-sm-4 control-label">Nombre </label>
         <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
-          <input type="text" disabled name="codigo" class="form-control" placeholder="Nombre" value={{paciente.nombre}}>
-          </div>                
+            <input type="text" name="nombre4" class="form-control" placeholder="Nombre" value={{paciente.nombre}}>
+            </div>                
       </div>
       <div class="form-group"> <!-- Apellido -->    
         <label class="col-sm-4 control-label">Apellido </label>
         <div class=" col-sm-6 input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
-          <input type="text" disabled name="codigo" class="form-control" placeholder="Apellido" value={{paciente.apellido}}>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-name"></span></span>
+            <input type="text" name="apellido4" class="form-control" placeholder="Apellido" value={{paciente.apellido}}>
           </div>                
       </div>
       <div class="form-group"> <!-- Fecha_de_nacimiento -->   
           <label class="col-sm-4 control-label">Fecha de nacimiento</label>
         <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-date"></span></span>
-              <input type="text" disabled name="nombres" class="form-control" placeholder="Fecha_de_nacimiento" value={{paciente.fecha_de_nacimiento}}>
+              <input type="text" name="fecha1" class="form-control" placeholder="Fecha_de_nacimiento" value={{paciente.fecha_de_nacimiento}}>
           </div>                
       </div>
   
@@ -95,7 +96,7 @@
           <label class="col-sm-4 control-label">Ciudad</label>
           <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-city"></span></span>
-              <input type="text" disabled name="lugar_nacimiento" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
+              <input type="text" name="lugar1" class="form-control" placeholder="Ciudad" value={{paciente.ciudad}}>
           </div>                
       </div>
   
@@ -103,7 +104,7 @@
           <label class="col-sm-4 control-label">Grupo Sanguineo</label>
           <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-blood"></span></span>
-              <input type="text" disabled name="telefono" class="form-control" placeholder="Grupo sanguineo" value={{paciente.grupo_sanguineo}}>
+              <input type="text" name="grupo1" class="form-control" placeholder="Grupo sanguineo" value={{paciente.grupo_sanguineo}}>
           </div>                
       </div>
   
@@ -111,15 +112,17 @@
           <label class="col-sm-4 control-label">Telefono / Celular</label>
               <div class=" col-sm-6 input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-              <input type="text" disabled name="telefono" class="form-control" placeholder="Teléfono / Celular" value={{paciente.telefono}}>
+              <input type="text" name="telefono1" class="form-control" placeholder="Teléfono / Celular" value={{paciente.telefono}}>
           </div>  
       </div>  
+      <input type="submit" style="margin-top: 30px" value="modificar">
+    </form>
     </div>
+   
     </div>
     </section>
     <div class="container">
-      <a href="http://127.0.0.1:5000/modificador/{{cedula}}"><img class="img-fluid mb-5 d-block mx-auto" style="margin-top:190px"  src="{{ url_for('static', filename='img/configuracion.png') }}" width="100" height="100" alt=""></a>
-    <h2 class="text-center text-uppercase text-secondary mb-0">Actualizar</h2>
-    </div>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Listo</h2>
+      </div>
 </body>
 </html>
